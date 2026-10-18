@@ -1,0 +1,14 @@
+services:
+  falkordb:
+    image: falkordb/falkordb:latest
+    container_name: codeimpact-falkordb
+    ports:
+      - "6379:6379"
+    environment:
+      - BROWSER=0
+    volumes:
+      - falkordb-data:/var/lib/falkordb/data
+    restart: unless-stopped
+
+volumes:
+  falkordb-data:
